@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Real-Time Chat (HTML/CSS/JS)</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Socket.IO client from CDN -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Real-Time Chat</h1>
+    </header>
+
+    <div class="main">
+      <aside class="sidebar">
+        <div class="profile">
+          <div id="myName" class="name">Not joined</div>
+          <button id="leaveBtn" class="btn small">Leave</button>
+        </div>
+        <h3>Online</h3>
+        <ul id="users" class="users"></ul>
+      </aside>
+
+      <section class="chat">
+        <div id="messages" class="messages"></div>
+
+        <form id="msgForm" class="msg-form" autocomplete="off">
+          <input id="msgInput" type="text" placeholder="Type a message..." />
+          <button class="btn">Send</button>
+        </form>
+      </section>
+    </div>
+
+    <div id="joinModal" class="modal">
+      <div class="modal-content">
+        <h2>Enter your name</h2>
+        <form id="joinForm">
+          <input id="nameInput" type="text" placeholder="Your name" required />
+          <button class="btn">Join class</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <small>Demo — uses Socket.IO. For production use a DB and auth.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
